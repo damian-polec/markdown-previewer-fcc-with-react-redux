@@ -1,28 +1,37 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { connect } from 'react-redux';
+import Editor from './Components/Editor/Editor';
+import Previewer from './Components/Previewer/Previewer';
+import * as actionCreators from './store/actionCreators';
+import './App.scss';
+
 
 class App extends Component {
+ /* onChangeHandler(e) {
+    const value = e.target.value;
+    this.setState({text: value});
+    console.log(this.state.text);
+  }*/
   render() {
     return (
       <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
+        <Editor text={this.props.text} change={this.props.onChangeHandler}/>
+        <Previewer text={this.props.text}/>
       </div>
     );
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    text: state.text
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    onChangeHandler: (e) => dispatch(actionCreators.getTextArea(e))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

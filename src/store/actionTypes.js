@@ -1,0 +1,1 @@
+export const GET_TEXTAREA_VALUE = 'GET_TEXTAREA_VALUE';

@@ -1,0 +1,32 @@
+.Editor {
+    border: 3px solid #BEA23B;
+    height: 100%;
+    width: 49%;
+    overflow: hidden;
+    box-shadow:
+        2px 2px 10px 0 #BEA23B,
+        -2px -2px 10px 0 #BEA23B;
+}
+
+.Textarea {
+    border: none;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background: #EED479;
+    color: #CA5310;
+    text-shadow: 2px 2px 15px #fff;
+    resize: none;
+}
+
+.Header {
+    background: #E8C547;
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+    border-bottom: 3px solid #BEA23B;
+    color: #FFF;
+    text-shadow: 2px 2px 5px #000;
+    text-transform: uppercase;
+}
+
